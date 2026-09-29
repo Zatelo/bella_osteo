@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бэлла — системная телесная адаптация</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap");
+:root{
+  --paper:#f6f1eb;--cream:#fffcf8;--sand:#ebe2d6;--ink:#3d3630;--muted:#7a6f64;
+  --accent:#6b4f3f;--chocolate:#5c4033;--line:rgba(107,79,63,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Manrope,Arial,sans-serif;
+  background:
+    radial-gradient(ellipse 80% 50% at 12% 8%, rgba(232,210,190,.46), transparent 55%),
+    radial-gradient(ellipse 60% 45% at 92% 10%, rgba(214,178,138,.32), transparent 52%),
+    linear-gradient(165deg,#faf8f4,#f6f1eb 48%,#f0e6d8);
+  color:var(--ink);line-height:1.65;min-height:100vh
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,252,248,.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.header-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:9px;letter-spacing:.16em;color:var(--chocolate);font-size:14px}
+.logo img{flex:none;display:block}
+.photo-card{position:relative;border-radius:28px;overflow:hidden;background:var(--sand)}
+.photo-card img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-card .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 26px;background:linear-gradient(0deg,rgba(61,54,48,.6),transparent 75%)}
+.photo-card .cap p{color:#fffdf9;font-size:13px;letter-spacing:.08em}
+.hero-in{display:grid;gap:36px;align-items:center}
+.hero-in .photo-card{aspect-ratio:4/5;box-shadow:0 30px 60px -25px rgba(61,54,48,.35)}
+@media(min-width:800px){
+  .hero-in{grid-template-columns:1.05fr .95fr;text-align:left}
+  .hero-in .cta-row{justify-content:flex-start!important}
+  .hero-in .eyebrow{margin-left:0}
+}
+nav.top{display:flex;flex-wrap:wrap;gap:4px}
+nav.top a{padding:8px 14px;border-radius:999px;font-size:13px;color:var(--muted)}
+nav.top a:hover{background:var(--sand);color:var(--chocolate)}
+nav.top a.active,nav.top a.on{background:var(--accent);color:#fffdf9}
+.display{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.03em;line-height:1.08}
+.label{color:var(--accent);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;font-size:14px}
+.btn-s{background:var(--accent);color:#fffdf9}
+.btn-g{border:1px solid rgba(107,79,63,.22)}
+.glass{background:rgba(255,252,248,.62);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:28px}
+.sec{padding:96px 0}
+.hero{min-height:100svh;display:flex;align-items:center;text-align:center;padding:120px 0 70px;position:relative;overflow:hidden}
+.muted{color:var(--muted)}
+.grid2{display:grid;gap:16px}
+.grid3{display:grid;gap:16px}
+footer{border-top:1px solid var(--line);padding:36px 0 90px}
+.mob{display:none}
+.deco{position:absolute;pointer-events:none;opacity:.1;color:var(--chocolate)}
+.about-visual .photo-card{aspect-ratio:3/4}
+.photo-card.work-visual{aspect-ratio:16/8}
+@media(min-width:800px){.photo-card.work-visual{aspect-ratio:16/6}}
+@media(min-width:800px){
+  .grid2{grid-template-columns:1fr 1fr}
+  .grid3{grid-template-columns:1fr 1fr 1fr}
+  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+  .author{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+}
+@media(max-width:800px){
+  .only-desk{display:none}
+  .mob{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);height:64px;background:rgba(255,252,248,.94);border-top:1px solid var(--line);z-index:50}
+  .mob a{display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted)}
+  footer{padding-bottom:96px}
+  .hero h1{font-size:44px!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="index.html">БЭЛЛА</a>
+    <nav class="top">
+      <a class="only-desk" href="index.html#about">О методе</a>
+      <a class="only-desk" href="index.html#author">Обо мне</a>
+      <a class="only-desk" href="index.html#work">Приём</a>
+      <a href="obuchenie.html" class="">Обучение</a>
+      <a href="slovar.html" class="">Словарь</a>
+      <a class="only-desk" href="index.html#contact">Запись</a>
+    </nav>
+  </div>
+</header>
+<nav class="mob">
+  <a href="index.html#about">Метод</a>
+  <a href="obuchenie.html">Обучение</a>
+  <a href="slovar.html">Словарь</a>
+  <a href="index.html#contact">Запись</a>
+</nav>
+
+<section class="hero" style="text-align:center">
+<svg class="deco" viewBox="0 0 800 800" width="420" height="420" style="top:-60px;left:-120px" aria-hidden="true">
+<circle cx="400" cy="400" r="140" fill="none" stroke="currentColor"/><circle cx="400" cy="400" r="220" fill="none" stroke="currentColor"/></svg>
+<div class="wrap hero-in" style="position:relative;z-index:1">
+  <div>
+  <p class="muted eyebrow" style="letter-spacing:.16em;font-size:14px;margin-bottom:18px">остеокоррекция · висцеральный массаж · телесные правки · самоправки</p>
+  <h1 class="display" style="font-size:clamp(44px,7vw,76px)">Системная<br><span style="color:var(--chocolate)">телесная адаптация</span></h1>
+  <p class="muted" style="max-width:520px;margin:24px auto 0;font-size:18px">Ищу не отдельную «проблемную зону», а связи между структурами и функциями организма.</p>
+  <div class="cta-row" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+    <a class="btn btn-s" href="#contact">Записаться</a>
+    <a class="btn btn-g" href="obuchenie.html">Обучение</a>
+    <a class="btn btn-g" href="slovar.html">Словарь</a>
+  </div>
+  </div>
+  <div class="photo-card">
+    <img src="sand.jpg" alt="Бэлла Агишева">
+    <div class="cap"><p>Системная телесная адаптация</p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="about">
+<div class="wrap about">
+  <div class="about-visual">
+    <p class="label">О методе</p>
+    <h2 class="display" style="font-size:clamp(36px,5vw,56px)">Системная<br>телесная адаптация</h2>
+    <div class="photo-card" style="margin-top:28px">
+      <img src="anatomy.jpg" alt="Изучение анатомии">
+    </div>
+  </div>
+  <div class="muted" style="font-size:17px">
+    <p>Комплексная работа с телом: ищу не отдельную «проблемную зону», а связи между структурами и функциями организма.</p>
+    <p style="margin-top:16px">Работаю руками — остеопатические и висцеральные техники, опорно-двигательная система, внутренние органы, диафрагмы, нервная система и ткани. При необходимости подключаю акупунктуру и индивидуально подобранные сборы трав. Часть работы передаю вам для самостоятельной практики дома (самоправки).</p>
+    <p style="margin-top:16px">Задача — не просто убрать симптом, а понять, какие изменения в теле с ним связаны, и изменить общую работу организма.</p>
+    <ul style="list-style:none;margin-top:20px;color:var(--ink)">
+      <li style="border-bottom:1px solid var(--line);padding:12px 0">— Остеопатические и висцеральные техники</li>
+      <li style="border-bottom:1px solid var(--line);padding:12px 0">— Органы, диафрагмы, нервная система, ткани</li>
+      <li style="border-bottom:1px solid var(--line);padding:12px 0">— Акупунктура и травяные сборы</li>
+      <li style="border-bottom:1px solid var(--line);padding:12px 0">— Самоправки для работы дома</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="author">
+<div class="wrap author">
+  <div style="border-radius:32px;overflow:hidden;background:var(--sand)">
+    <img src="bella-photo.jpg" alt="Бэлла Агишева" style="width:100%;display:block">
+  </div>
+  <div>
+    <p class="label">Обо мне</p>
+    <h2 class="display" style="font-size:clamp(36px,5vw,52px)">Бэлла Агишева</h2>
+    <p style="margin:12px 0 22px;color:var(--accent);font-size:17px">Создатель авторского метода «Системная телесная адаптация»</p>
+    <p class="muted">Медицинская сестра, квалификация по медицинскому массажу (военный госпиталь №8). 8 лет учёбы, 7 лет практики. Профессиональная переподготовка в Академии остеопатии — продолжаю учиться.</p>
+    <p class="muted" style="margin-top:14px">Более 1000 приёмов: от новорождённых до людей 90+. Очно — Самара, Москва, Санкт-Петербург. Онлайн — консультации и школа «Самоправки».</p>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="diagnostics">
+<div class="wrap">
+  <p class="label">Как начинается приём</p>
+  <h2 class="display" style="font-size:clamp(36px,5vw,56px)">Диагностика</h2>
+  <p class="muted" style="max-width:680px;margin-top:18px">Сеанс начинается со сбора анамнеза и диагностики. Разбираем режим дня, питание, работу пищеварения, стрессовые факторы, операции, роды, боли и жалобы.</p>
+  <div class="grid3" style="margin-top:40px">
+    <div class="glass" style="padding:28px;min-height:200px"><div style="letter-spacing:.14em;color:var(--accent);font-size:12px">01</div><h3 class="display" style="font-size:26px;margin-top:36px">Анамнез</h3><p class="muted" style="margin-top:10px;font-size:15px">Режим дня, питание, пищеварение, стресс, операции, роды, боли и жалобы.</p></div>
+    <div class="glass" style="padding:28px;min-height:200px"><div style="letter-spacing:.14em;color:var(--accent);font-size:12px">02</div><h3 class="display" style="font-size:26px;margin-top:36px">Осмотр тела</h3><p class="muted" style="margin-top:10px;font-size:15px">Положение тела, подвижность позвоночника, объём движений, паттерны движения.</p></div>
+    <div class="glass" style="padding:28px;min-height:200px"><div style="letter-spacing:.14em;color:var(--accent);font-size:12px">03</div><h3 class="display" style="font-size:26px;margin-top:36px">Проверка систем</h3><p class="muted" style="margin-top:10px;font-size:15px">Работа основных нервов, органов и мышц. Ищем связи, а не только место симптома.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="work">
+<div class="wrap">
+  <p class="label">На приёме</p>
+  <h2 class="display" style="font-size:clamp(36px,5vw,56px)">Что я делаю</h2>
+  <p class="muted" style="max-width:680px;margin-top:18px">Работаю руками с разными структурами. Техники выбираю под конкретного человека. Часть работы выполняем вместе на приёме, часть передаю для самостоятельной практики дома.</p>
+  <div class="work-visual photo-card" style="margin-top:32px"><img src="hands.jpg" alt="Работа руками"></div>
+  <div class="grid3" style="margin-top:32px">
+    <div class="glass" style="padding:22px"><h3>Позвоночник и суставы</h3><p class="muted" style="font-size:14px;margin-top:6px">Остеопатические правки и работа с подвижностью</p></div><div class="glass" style="padding:22px"><h3>Мышцы и фасции</h3><p class="muted" style="font-size:14px;margin-top:6px">Снятие ограничений и восстановление скольжения тканей</p></div><div class="glass" style="padding:22px"><h3>Грудная клетка и диафрагмы</h3><p class="muted" style="font-size:14px;margin-top:6px">Дыхание, объём и взаимосвязи</p></div><div class="glass" style="padding:22px"><h3>Живот и внутренние органы</h3><p class="muted" style="font-size:14px;margin-top:6px">Висцеральные техники и работа со связями</p></div><div class="glass" style="padding:22px"><h3>Голова и шея</h3><p class="muted" style="font-size:14px;margin-top:6px">Ткани, нервы и мягкие структуры</p></div><div class="glass" style="padding:22px"><h3>Самоправки домой</h3><p class="muted" style="font-size:14px;margin-top:6px">Техники для самостоятельной поддержки</p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+  <p class="label">Обучение</p>
+  <h2 class="display" style="font-size:clamp(36px,5vw,56px)">Самоправки<br>и курсы для специалистов</h2>
+  <div class="grid2" style="margin-top:36px">
+    <a class="glass" href="obuchenie.html#samopravki" style="padding:32px;display:block">
+      <p class="label">Для всех</p>
+      <h3 class="display" style="font-size:32px">Самоправки</h3>
+      <p class="muted" style="margin-top:10px">Понимание структуры → связи → практика руками. Курс 4 500 ₽ — как один приём, но навык остаётся с вами.</p>
+      <p style="margin-top:18px;color:var(--chocolate);font-size:13px">Открыть раздел →</p>
+    </a>
+    <a class="glass" href="obuchenie.html#specialists" style="padding:32px;display:block">
+      <p class="label">Для специалистов</p>
+      <h3 class="display" style="font-size:32px">Курсы и очно</h3>
+      <p class="muted" style="margin-top:10px">GetCourse и живая практика. Не набор техник, а понимание, что под руками и почему выбирается приём.</p>
+      <p style="margin-top:18px;color:var(--chocolate);font-size:13px">Открыть раздел →</p>
+    </a>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+  <p class="label">Приём</p>
+  <h2 class="display" style="font-size:clamp(36px,5vw,56px)">Где принимаю</h2>
+  <div class="grid2" style="margin-top:32px">
+    <div class="glass" style="padding:36px"><h3 class="display" style="font-size:28px">Очно</h3>
+      <p style="margin-top:16px" class="muted">Самара · Москва · Санкт-Петербург</p></div>
+    <div class="glass" style="padding:36px"><h3 class="display" style="font-size:28px">Онлайн</h3>
+      <p style="margin-top:16px" class="muted">Консультации · Школа «Самоправки»</p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="contact" style="text-align:center">
+  <h2 class="display" style="font-size:clamp(40px,6vw,72px)">Запись на приём</h2>
+  <p class="muted" style="margin:20px auto;max-width:520px">Очно: Самара · Москва · Санкт-Петербург<br>Онлайн: консультации и школа «Самоправки»</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+    <a class="btn btn-s" href="tel:+79063454813">+7 906 345-48-13</a>
+    <a class="btn btn-g" href="https://instagram.com/osteo_bella" target="_blank" rel="noopener">Instagram</a>
+    <a class="btn btn-g" href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a>
+  </div>
+  <p class="muted" style="margin-top:20px;font-size:13px">Бэлла Агишева · osteo_bella</p>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between">
+    <div class="logo">БЭЛЛА</div>
+    <p class="muted" style="font-size:13px">Системная телесная адаптация · Школа Самоправки<br>
+    <a href="obuchenie.html">Обучение</a> · <a href="slovar.html">Словарь</a></p>
+  </div>
+</footer>
+
+</body></html>
